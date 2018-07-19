@@ -1,0 +1,1087 @@
+/*
+  Theme Name: Materio
+  Theme URL: -
+  Author: oprns
+  Author URI: -
+  Description: Onepage Responsive HTML Mobile App Landing Page
+  Version: 1.0
+*/
+
+
+/* Table of contents
+---------------------------------------------------------------------------------------
+
+0. Global Styles
+1. Jumbotron
+2. Preloder
+3. Features
+4. Tabs
+5. Screenshots
+6. Reviews
+7. Plans
+8. About
+9. Team
+10. FAQ's
+11. News letter Subscribe
+12. footer
+13. Customizer
+
+*/
+
+// Small screen / tablet
+@screen-s-min		: 601px;
+
+// Medium screen / desktop
+@screen-m-min		: 992px;
+
+// So media queries don't overlap when required, provide a maximum 
+@screen-s-max		: (@screen-s-min - 1);
+@screen-m-max		: (@screen-m-min - 1);
+
+@font-size-base		: 14;
+@line-height-base	: 1.6;
+
+@primary-color 		:	#ee184c;
+@secondary-color	: #f44336;
+@font-color				:	#676767;
+@gray-color				:	#7a7a7a;
+@light-gray-color : #d0d0d0;
+
+
+//mixins
+.font-size(@string) {
+	@remfont: @string / @font-size-base;
+	font-size: ~"@{remfont}rem";
+	line-height: ~"@{line-height-base}em";
+}
+
+/* global styles
+---------------------------------------------------------------------------------------*/
+body {
+	overflow-x: hidden;
+	
+	&.loading {
+		.wrapper {
+	 		visibility: hidden;
+		}
+	}
+
+	&.loaded {
+		.preloder {
+			visibility: hidden;
+		}
+
+		.wrapper {
+	 		visibility: visible;
+		}
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 300;
+	text-align: center;
+}
+
+.container {
+  padding: 0;
+  width: 95%;
+}
+
+.row {
+	margin-bottom: 0;
+}
+
+h2 {
+	text-align: center;
+	.font-size(28);
+	color: #fff;
+	font-weight: 100;
+}
+
+p {
+	color: @font-color;
+}
+
+nav {
+	background-color: @primary-color;
+	position: relative;
+}
+
+.text-semi-bold {
+	font-weight: 600;
+}
+
+.white-text {
+	color: #fff !important;
+}
+
+.dropdown-content {
+	left: auto;
+  right: 0 !important;
+}
+
+
+/* preloder
+---------------------------------------------------------------------------------------*/
+.preloader {
+	display: table;
+  background: #fff;
+  z-index: 999999;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+
+  .preloader-wrapper {
+  	margin: auto;
+ 		position: absolute;
+  	top: 0;
+  	left: 0;
+  	bottom: 0;
+  	right: 0;
+  }
+}
+
+/* jumbotron
+---------------------------------------------------------------------------------------*/
+.jumbotron-container {
+	background-image: url('../img/jumbotron-bg.jpg');
+	background-position: top;
+	background-size: cover;
+	background-attachment: fixed;
+
+	h1 {
+		color: #fff;
+		.font-size(30);
+		font-weight: 100;
+	}
+
+	.store-btn {
+		  width: 130px;
+  		height: auto;
+  		margin: 0 auto;
+	}
+
+	.jumbotron-device {
+		position: relative;
+		margin: 20px 0 0;
+		z-index: 1;
+	}	
+}
+
+/* features
+---------------------------------------------------------------------------------------*/
+.features-container {
+	background-color: #673AB7;
+	padding: 20px 0 0;
+	-webkit-box-shadow: 0px -4px 5px -2px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px -4px 5px -2px rgba(0,0,0,0.25);
+  box-shadow: 0px -4px 5px -2px rgba(0,0,0,0.25);
+  margin-top: -65px;
+
+	h2 {
+		color: #fff;
+		font-weight: 100;
+	}
+
+	.card-horizontal {
+		.card-image {
+		  background: @primary-color;
+		  color: #fff;
+		  font-size: 90px;
+		  text-align: center
+		}
+
+		.card-content .card-title {
+			color: @font-color;
+		}
+	}
+
+	.video-card {
+		position: relative;
+		z-index: 3;
+
+		.card-image {
+			position: relative;
+			padding-bottom: 50%;
+			padding-top: 30px;
+			height: 0;
+			overflow: hidden;
+			z-index: -10;
+
+			iframe {
+				width: 100%;
+				border:0;
+			}
+
+			iframe, object, embed {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 70%;
+			}
+		}
+
+		.card-content {
+			margin-top: -15%;
+
+			.card-title {
+				color: @primary-color;
+				.font-size(30);
+				font-weight: 300;
+				margin-bottom: 20px
+			}
+		}
+	}
+}
+
+
+/* tabs
+---------------------------------------------------------------------------------------*/
+.tab-container {
+	background: @primary-color;
+	margin-top: -78px;
+  padding: 70px 0 0;
+  z-index: 2;
+
+  .tab-nav {
+  	position: relative;
+  	z-index: 5;
+  	-webkit-box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.25);
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.25);
+  }
+
+	h2 {
+		color: #fff;
+		font-weight: 100;
+	}
+
+	.tabs {
+	  background-color: transparent;
+
+	  li.tab {
+  		background-color: transparent;
+
+  		a {
+  			color: #fff;
+  			font-weight: 400;
+  		}
+		}
+
+		.indicator {
+		  background-color: #fff;
+		}
+	}
+
+	.tab-content {
+		background: url('../img/tab-bg.jpg');
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+		padding: 50px 0;
+
+		.tab-heading {
+			color: #fff600;
+			.font-size(25);
+			font-weight: 300;
+		}
+
+		.feature {
+			margin-top: 35px;
+
+			i {
+				.font-size(40);
+				float: left;
+				color: #242424;
+				margin: 0 25px 25px 0;
+			}
+
+			h4 {
+				.font-size(22);
+				color: #fff;
+				font-weight: 300;
+				text-align: left;
+				margin-bottom: 5px;
+			}
+
+			p {
+				color: #fff;
+				margin: 0;
+				font-weight: 300;
+			}
+
+			&.tab2 i {
+				.font-size(60);
+			}
+
+			&.tab3 i {
+				margin: 0 20px 0;
+			}
+		}
+
+		ul.feature {
+			margin: 30px 0;
+
+			li {
+				margin: 20px 0;
+				color: #fff;
+
+				i {
+					.font-size(25);
+					color: #242424;
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+}
+
+/* screen shot
+---------------------------------------------------------------------------------------*/
+.screenshot-container {
+	position: relative;
+	background-color: #ffca28;
+	-webkit-box-shadow: 0px -4px 5px -2px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px -4px 5px -2px rgba(0,0,0,0.25);
+  box-shadow: 0px -4px 5px -2px rgba(0,0,0,0.25);
+	padding: 25px 0 0;
+
+	h2, p {
+		text-align: center;
+	}
+
+	h2 {
+		color: #131313;
+	}
+
+	#screenshot-carousel .item {
+	  margin: 10px;
+
+	  img {
+		  display: block;
+		  width: 100%;
+		  height: auto;
+		  border-radius: 2px;
+		}
+	}
+}
+
+
+/* reviews
+---------------------------------------------------------------------------------------*/
+.reviews-container {
+	background-color: #8bc34a;
+
+	h2 {
+		color: #fff;
+	}
+
+	#reviews-carousel {
+		width: 100%;
+		padding: 0 5%;
+
+		.card-horizontal {
+			margin: 0 5px;
+
+			.card-title {
+				color: @primary-color;
+			}
+		}
+	}
+}
+
+
+/* plans
+---------------------------------------------------------------------------------------*/
+.mountain-bg {
+	background-image: url('../img/plans.bg.jpg');
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.plans-container {
+	
+	.collection {
+		border: none;
+
+		.collection-item {
+	  	border-bottom: none;
+	  	.font-size(15);
+
+	  	&:before {
+	  		font-family: "Material-Design-Icons";
+	  		.font-size(18);
+	  		color: #009315;
+				speak: none;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				-webkit-font-smoothing: antialiased;
+				content: "\e623";
+				margin-right: 10px;
+	  	}
+	  }
+	}
+
+	.card {
+		.card-image {
+			position: relative;
+			width: 100%;
+
+			.card-title {
+				position: relative;
+				.font-size(18);
+				width: 100%;
+			  padding: 10px 15px;
+			  text-transform: uppercase;
+				background: rgba(0,0,0,0.1);
+
+			}
+
+			.price {
+				position: relative;
+				.font-size(70);
+				color: #fff;
+				font-weight: 300;
+				text-align: center;
+
+				sup {
+					font-weight: 100;
+					.font-size(20);
+					top: -35px;
+				}
+
+				sub {
+					font-weight: 100;
+					.font-size(20);
+					top: 0px;
+				}
+			}
+
+			.price-desc {
+				text-align: center;
+				color: #fff;
+				padding-bottom: 10px;
+			}
+		}
+
+		.card-content {
+			padding: 0;
+		}
+	}
+}
+
+
+
+/* about
+---------------------------------------------------------------------------------------*/
+.about-container {
+
+	.card-title {
+		
+		.font-size(24);
+		line-height: inherit !important;
+	}
+
+	p {
+		.font-size(18);
+		color: @light-gray-color;
+		line-height: 1.9rem;
+		font-weight: 300;
+	}
+}
+
+
+/* team
+---------------------------------------------------------------------------------------*/
+
+.team-container {
+	background-image: url('../img/team-bg.png');
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 230px 0 50px;
+	margin-top: -200px;
+
+	h2 {
+		color: #fff;
+	}
+}
+
+
+/* faqs
+---------------------------------------------------------------------------------------*/
+.faq-container {
+
+	h2 {
+		color: @font-color;
+		font-weight: 300;
+	}
+
+	h3 {
+		.font-size(24);
+		text-align: left;
+	}
+
+	ul.collapsible {
+		margin: 0;
+  	padding: 0;
+	  border-top: none;
+	  border-right: none;
+	  border-left: none;
+	  -webkit-box-shadow: inherit;
+    -moz-box-shadow: inherit;
+    box-shadow: inherit;
+
+    .collapsible-header {
+    	color: @primary-color;
+    	overflow: hidden;
+	    
+	    i {
+	    	float: right;
+	    	margin-right: 0;
+	    }
+  	}
+
+  	p {
+  		padding: 0 2rem 2rem 0;
+  	}
+
+  	li.active {
+  		.collapsible-header {
+  			border-bottom:none;
+
+  			i.mdi-hardware-keyboard-arrow-down:before {
+  				content: "\e7b7";
+  			}
+  		}
+  	}
+	}
+}
+
+/* subscribe
+---------------------------------------------------------------------------------------*/
+.subscribe-container {
+	background-color: #F5F5F5;
+	padding: 25px 0;
+	margin-top: 50px;
+
+	p {
+		color: #fff;
+	}
+
+	.input-field label {
+    color: #fff;
+  }
+
+  .input-field input[type=email]:focus + label {
+  	color: #fff;
+ 	}
+
+ 	.input-field input[type=email] {
+     border-bottom: 1px solid #fff;
+     box-shadow: 0 1px 0 0 #fff;
+   }
+
+	.input-field input[type=email]:focus {
+		border-bottom: 1px solid #1b5e20;
+		box-shadow: 0 1px 0 0 #1b5e20;
+	}
+}
+
+/* contact
+---------------------------------------------------------------------------------------*/
+.contact-container {
+	position: relative;
+	padding: 40px 0;
+	z-index: 2;
+
+	.card-title {
+		color: @primary-color;
+	}
+}
+
+/* footer
+---------------------------------------------------------------------------------------*/
+footer.page-footer {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+
+/* customizer
+---------------------------------------------------------------------------------------*/
+.customizer {
+	position: fixed;
+	//z-index: 1;
+	top: 150px;
+
+	.interface {
+		position: relative;
+		float: left;
+		background: rgba(0,0,0,.8);
+		width: 250px;
+		padding: 10px 20px;
+		color: #fff;
+		display: none;
+
+		.heading {
+			text-transform: uppercase;
+			font-weight: 700;
+			.font-size(16);
+			line-height: 2.3em;
+			border-bottom: 1px rgba(0,0,0,.2) solid;
+		}
+
+		.content {
+			
+			ul {
+				float: left;
+				padding: 10px 0;
+
+				li {
+					list-style: none;
+					float: left;
+					width: 30px;
+					height: 30px;
+					border-radius:50%;
+					background: #fff;
+					margin-right: 10px;
+					text-align: left;
+					cursor: pointer;
+
+					&.green {
+						background: #8BC34A;
+					}
+
+					&.pink {
+						background: #ED005A;
+					}
+
+					&.purple {
+						background: #9C27B0;
+					}
+
+					&.cyan {
+						background: #00D8F4;
+					}
+
+					&.orange {
+						background: #FF5722;
+					}
+				}
+			}
+
+			a {
+				display: block;
+				color: #fff;
+				padding: 10px 0 0 0;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.toggle-btn {
+		position: relative;
+		float: left;
+		background: rgba(0,0,0,.7);
+		padding: 5px 10px;
+		color: #fff;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+		.font-size(20);
+		cursor: pointer;
+	}
+}
+
+
+//responsive style for tab and up
+@media (min-width: @screen-s-min) {
+	.jumbotron-container {
+		.store-btn {
+			margin: 0;
+		}
+
+		.brand {
+			color: #fff;
+			.font-size(50);
+			font-weight: 100;
+			margin-top: 100px;
+		}
+
+		.jumbotron-device {
+			text-align: right;
+			margin: 40px -30px 0;
+		}
+	}
+
+	.features-container {
+		h2 {
+			text-align: left;
+		}
+
+		.card.small {
+			height: 170px;
+		}
+
+		.card-horizontal {
+			.card-image {
+				float: left;
+				width: 30%;
+				height: 100%;
+			}
+
+			.card-content {
+				float: left;
+				width: 70%;
+			}
+
+			.card-action {
+				width: 65%;
+				left: inherit;
+				padding: 10px 20px;
+			}
+		}
+	}
+
+	.reviews-container {
+
+		.card-horizontal {
+			height: 200px;
+
+			.card-image {
+				float: left;
+				width: 30%;
+			}
+
+			.card-content {
+				float: left;
+				width: 70%;
+			}
+
+			.card-action {
+				float: left;
+				width: 70%;
+				left: inherit;
+			}
+		}
+	}
+
+	.plans-container {
+		.card {
+			min-height: 550px;
+
+			.card-action {
+				position: absolute;
+	  		width: 100%;
+	  		bottom: 0;
+			}
+		}
+	}
+
+	.faq-container {
+		.collapsible-header {
+  		padding: 0;
+		}
+	}
+
+	#google-map {
+		position: absolute;
+	  height: 100%;
+	  width: 100%;
+	  top: 0;
+	  left: 0;
+	  z-index: 0;
+	}
+}
+
+//responsive style for only tab
+@media (min-width: @screen-s-min) and (max-width: @screen-m-max) {
+	.container {
+	  width: 600px;
+	  padding: 0 10px;
+	}
+
+	.jumbotron-container {
+		h1 {
+			  margin-top: 15px;
+  			text-align: left;
+		}
+	}
+
+	.card .card-content .card-title {
+		line-height: auto;
+	}
+}
+
+@media (min-width: 700px) {
+	.container {
+	  width: 700px;
+	}
+
+	.jumbotron-container {
+		.brand {
+			margin-top: 150px;
+		}
+	}
+
+	.features-container {
+		margin-top: -80px;
+	}
+}
+
+@media (min-width: 800px) {
+	.container {
+	  width: 800px;
+	}
+}
+
+@media (min-width: 900px) {
+	.container {
+	  width: 900px;
+	}
+
+	.jumbotron-container {
+		.brand {
+			margin-top: 200px;
+		}
+	}
+
+	.features-container {
+		margin-top: -100px;
+	}
+}
+
+//responsive style for desktops and up
+@media (min-width: @screen-m-min) {
+	nav {
+		position: relative;
+		z-index: 1;
+
+		.brand-logo {
+  		padding-left: 20px;
+  		font-weight: 100;
+		}
+
+		ul a {
+		  .font-size(16);
+		  text-transform: uppercase;
+		  font-weight: 300;
+
+		  i {
+		  	margin-top: -17px;
+		  }
+		}
+	}
+
+	.dropdown-content {
+		margin-top: -19px;
+	}
+
+	h2 {
+		.font-size(45);
+	}
+
+	.container {
+	  width: 992px;
+	  padding: 0 10px;
+	}
+
+	.jumbotron-container {
+		padding-top: 80px;
+
+		.brand {
+			.font-size(110);
+			margin-top: 120px;
+		}
+
+		.jumbotron-device {
+	  	 margin: 50px -65px 0 0;
+		}
+
+		h1 {
+			.font-size(55);
+			text-align: left;
+			margin-top: -10px;
+		}
+	}
+
+	.features-container {
+		margin-top: -115px;
+
+		h2 {
+			.font-size(40);
+		}
+
+		.card-horizontal {
+			.card-image {
+				width: 35%;
+			}
+
+			.card-content {
+				width: 65%;
+			}
+		}
+	}
+
+	.tab-container {
+		.tab-nav {
+			
+			h2 {
+				margin: 50px 0 40px;
+			}
+
+			.tabs li.tab a {
+			  .font-size(20);
+			}
+		}
+
+		.tab-content {
+			position: relative;
+			padding: 150px 0 0;
+
+			.dual-device {
+				position: relative;
+				z-index: 4;
+			}
+
+			.tab-heading {
+			  font-size: 45px;
+			  margin-top: 30px;
+			  font-weight: 100;
+			}
+
+			.tab2 p, .tab4 p {
+  			line-height: 2em;
+  		}
+		}
+	}
+
+	.reviews-container {
+		padding: 80px 0 40px;
+
+		h2 {
+			margin-bottom: 40px;
+		}
+	}
+
+	.screenshot-container {
+		margin-top: -110px;
+  	z-index: 2;
+		padding: 100px 0 40px;
+
+		h2 {
+			margin-bottom: 70px;
+		}
+	}
+
+	.plans-container {
+		padding-top: 100px;
+
+		h2 {
+			margin-bottom: 60px;
+		}
+
+		.card {
+			.card-image {
+				
+				.card-title {
+					.font-size(20);
+				}
+
+				.price {
+					.font-size(90);
+					margin: -15px 0;
+
+					sup {
+						.font-size(30);
+						top: -45px;
+					}
+
+					sub {
+						font-weight: 100;
+						.font-size(30);
+						top: 0px;
+					}
+				}
+			}
+
+			.card-content {
+				padding: 25px 15px;
+			}
+		}
+	}
+
+	.about-container {
+		padding-top: 100px;
+
+		h2 {
+			margin-bottom: 50px;
+		}
+
+		.card-title {
+			.font-size(28);
+			margin-bottom: 10px;
+		}
+	}
+
+	.team-container {
+		padding-top: 200px;
+		margin-top: -180px;
+
+		h2 {
+			margin: 80px 0 50px;
+			font-weight: 300;
+		}	
+	}
+
+	.faq-container {
+		padding: 100px 0 50px;
+
+		h2 {
+			margin-bottom: 80px;
+		}
+
+		h3 {
+			font-size: 35px;
+			margin-top: 50px;
+		}
+
+		.collapsible .collapsible-header {
+			.font-size(18);
+			height: 3.4em;
+			line-height: 2.7em;
+		}
+	}
+
+	.subscribe-container {
+		padding: 35px 0;
+
+		button {
+			margin-top: 25px;
+		}
+	}
+}
+
+//responsive style for large dekstop
+@media (min-width: 1200px) {
+	.container {
+	  width: 1200px;
+	  padding: 0 15px;
+	}
+
+	.jumbotron-container {
+
+		h1 {
+			.font-size(47);
+		}
+	}
+}
