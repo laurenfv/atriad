@@ -187,7 +187,7 @@ nav .brand-logo {
 /* tabs
 ---------------------------------------------------------------------------------------*/
 .tab-container {
-  background: #0BB4C1;
+  background: #00D49D;
   /* margin-top: -78px; */
   /* padding: 70px 0 0; */
   z-index: 2;
@@ -217,7 +217,7 @@ nav .brand-logo {
   background-color: #fff;
 }
 .tab-container .tab-content {
-  background-color: #0BB4C1;
+  background-color: #00D49D;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
